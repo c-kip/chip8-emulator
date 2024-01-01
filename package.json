@@ -4,7 +4,7 @@
   },
   "name": "chip8-emulator",
   "description": "A simple emulator for CHIP-8 (https://en.wikipedia.org/wiki/CHIP-8)",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.17.0",
@@ -16,6 +16,8 @@
     "typescript": "^5.3.3"
   },
   "scripts": {
+    "start": "tsc && node src/chip8.ts",
+    "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
