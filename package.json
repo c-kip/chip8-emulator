@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "node": "^21.2.0"
+  },
+  "name": "chip8-emulator",
+  "description": "A simple emulator for CHIP-8 (https://en.wikipedia.org/wiki/CHIP-8)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c-kip/chip8-emulator.git"
+  },
+  "author": "Callum Kipin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c-kip/chip8-emulator/issues"
+  },
+  "homepage": "https://github.com/c-kip/chip8-emulator#readme"
+}
