@@ -40,6 +40,23 @@ class Renderer {
       Array(this.PIXEL_COLS).fill(0)
     );
   }
+
+  /**
+   * Simplified DRW command, XORs a single pixel on the display and returns
+   * true if a pixel was overwritten (false otherwise)
+   * @param {number} x The x coordinate to XOR
+   * @param {number} y The y coordinate to XOR
+   * @returns {boolean} True if a pixel was overwritten, false otherwise
+   */
+  private setPixel(x: number, y: number): boolean {
+    // Limit the pixel to the screen bounds (wrap-around if needed)
+    x = x % this.PIXEL_COLS;
+    y = y % this.PIXEL_ROWS;
+
+    this.display[y][x] ^= 1; // XOR the pixel w/ 1
+
+    return !this.display[y][x]; // return true if a pixel was replaced
+  }
 }
 
 export default Renderer;
