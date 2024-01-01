@@ -57,6 +57,13 @@ class Renderer {
 
     return !this.display[y][x]; // return true if a pixel was replaced
   }
+
+  /**
+   * CLS command, clears the screen (sets all pixels to 0).
+   */
+  private clear() {
+    this.display = this.display.map(() => Array(this.PIXEL_COLS).fill(0));
+  }
 }
 
 export default Renderer;
