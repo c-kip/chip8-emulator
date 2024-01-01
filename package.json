@@ -6,7 +6,9 @@
   "description": "A simple emulator for CHIP-8 (https://en.wikipedia.org/wiki/CHIP-8)",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
