@@ -48,7 +48,7 @@ class Renderer {
    * @param {number} y The y coordinate to XOR
    * @returns {boolean} True if a pixel was overwritten, false otherwise
    */
-  private setPixel(x: number, y: number): boolean {
+  public setPixel(x: number, y: number): boolean {
     // Limit the pixel to the screen bounds (wrap-around if needed)
     x = x % this.PIXEL_COLS;
     y = y % this.PIXEL_ROWS;
@@ -61,8 +61,35 @@ class Renderer {
   /**
    * CLS command, clears the screen (sets all pixels to 0).
    */
-  private clear() {
+  public clear() {
     this.display = this.display.map(() => Array(this.PIXEL_COLS).fill(0));
+  }
+
+  /**
+   * Render method that draws all pixels in the display array to the canvas.
+   */
+  public render() {
+    // Clear the canvas screen each render
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    // Set the fill colour to black
+    this.context.fillStyle = '#000';
+
+    // Loop through the pixel array and draw each individual pixel to the
+    // correct scale
+    for (let y = 0; y < this.display.length; y++) {
+      for (let x = 0; x < this.display[x].length; x++) {
+        // Draw the pixel if it exists (display val = 1)
+        if (this.display[y][x]) {
+          this.context.fillRect(
+            x * this.scale,
+            y * this.scale,
+            this.scale,
+            this.scale
+          );
+        }
+      }
+    }
   }
 }
 
