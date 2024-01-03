@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "public/dist",
     "strictNullChecks": true
   },
   "lib": ["es2020"]
